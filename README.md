@@ -1,5 +1,5 @@
 # DSL Databinding
-Android databinding implementation for Kotlin
+Pure Kotlin DSL databinding implementation. No code generation.
 
 Latest version: [![](https://jitpack.io/v/codeerow/dsldatabinding.svg)](https://jitpack.io/#codeerow/dsldatabinding)
 
@@ -30,4 +30,29 @@ Step 2. Add the dependency
 dependencies {
         implementation 'com.github.codeerow:dsldatabinding:$version'
 }
+```
+
+## Usage
+```kotlin
+override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        databinding {
+            with(inputName) {
+                text(viewModel.name, twoWay = true)
+            }
+            with(inputEmail) {
+                text(viewModel.email, twoWay = true)
+            }
+            with(inputTitle) {
+                text(viewModel.title, twoWay = true)
+            }
+            with(inputDescription) {
+                text(viewModel.description, twoWay = true)
+            }
+        }
+
+        configureToolbar()
+        configureSendUseCase()
+    }
 ```
