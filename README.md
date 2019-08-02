@@ -33,6 +33,15 @@ dependencies {
 ```
 
 ## Usage
+ViewModel:
+```kotlin
+    val name = MutableLiveData<String>()
+    val email = MutableLiveData<String>()
+    val title = MutableLiveData<String>()
+    val description = MutableLiveData<String>()
+```
+
+LifecycleOwner (e.g. Fragment):
 ```kotlin
 override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
