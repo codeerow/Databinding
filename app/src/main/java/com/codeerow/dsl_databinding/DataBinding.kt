@@ -32,12 +32,14 @@ class DataBinding(private val lifecycleOwner: LifecycleOwner) {
         }
     }
 
-    fun View.visibility(visible: Boolean, goneWhenInvisible: Boolean = false) {
-        visibility = if (visible) {
-            View.VISIBLE
-        } else {
-            if (goneWhenInvisible) View.GONE
-            else View.INVISIBLE
-        }
+    fun View.visibility(liveData: MutableLiveData<Boolean>, goneWhenInvisible: Boolean = false) {
+        liveData.observe(lifecycleOwner, Observer { visible ->
+            visibility = if (visible) {
+                View.VISIBLE
+            } else {
+                if (goneWhenInvisible) View.GONE
+                else View.INVISIBLE
+            }
+        })
     }
 }
