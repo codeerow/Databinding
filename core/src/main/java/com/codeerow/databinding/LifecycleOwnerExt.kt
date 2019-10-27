@@ -1,4 +1,4 @@
-package com.codeerow.dsl_databinding
+package com.codeerow.databinding
 
 import androidx.lifecycle.LifecycleOwner
 
