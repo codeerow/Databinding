@@ -1,0 +1,23 @@
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = 'com.github.codeerow.databinding'
+
+
+apply plugin: 'java-library'
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {}
+}
+
+repositories {
+    mavenCentral()
+}

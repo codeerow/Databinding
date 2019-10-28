@@ -8,10 +8,15 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/androidx-core" />
+            <option value="$PROJECT_DIR$/androidx-core-ktx" />
+            <option value="$PROJECT_DIR$/androidx-recyclerview" />
+            <option value="$PROJECT_DIR$/androidx-recyclerview-ktx" />
+            <option value="$PROJECT_DIR$/core" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
+        <option name="testRunner" value="PLATFORM" />
       </GradleProjectSettings>
     </option>
   </component>
