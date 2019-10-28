@@ -1,14 +1,26 @@
-# DSL Databinding
-Pure Kotlin DSL databinding implementation. No code generation.
+# Databinding
+Data binding interfaces with implementations for Android Java and Kotlin. No code generation.
+You can easily extend it but your own!
 
 Latest version: [![](https://jitpack.io/v/codeerow/dsldatabinding.svg)](https://jitpack.io/#codeerow/dsldatabinding)
 
 ## Now available:
 ### View
 - visibility
+- enabled
+- click
 
 ### TextView
 - text
+
+### Recycler view
+- items
+
+### Seekbar
+- progress (int)
+
+### Toolbar
+- nav button click 
 
 ## Installation
 
@@ -46,7 +58,7 @@ LifecycleOwner (e.g. Fragment):
 override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        databinding {
+        dataBinding {
             with(inputName) {
                 text(viewModel.name, twoWay = true)
             }
@@ -60,8 +72,5 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
                 text(viewModel.description, twoWay = true)
             }
         }
-
-        configureToolbar()
-        configureSendUseCase()
     }
 ```
