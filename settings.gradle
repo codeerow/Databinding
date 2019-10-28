@@ -1,1 +1,2 @@
-include ':core', ':recyclerview'
+rootProject.name = 'Databinding'
+include ':core', ':androidx-recyclerview-ktx', ':androidx-core', ':androidx-core-ktx', ':androidx-recyclerview'

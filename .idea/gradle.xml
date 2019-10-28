@@ -8,8 +8,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/androidx-core" />
+            <option value="$PROJECT_DIR$/androidx-core-ktx" />
+            <option value="$PROJECT_DIR$/androidx-recyclerview" />
+            <option value="$PROJECT_DIR$/androidx-recyclerview-ktx" />
             <option value="$PROJECT_DIR$/core" />
-            <option value="$PROJECT_DIR$/recyclerview" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
