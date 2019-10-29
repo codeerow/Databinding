@@ -40,7 +40,9 @@ allprojects {
 Step 2. Add the dependency
 ```groovy
 dependencies {
-        implementation 'com.github.codeerow:dsldatabinding:$version'
+        implementation "com.github.codeerow.databinding:core:2.0.0-beta" // core-ktx for Kotlin
+        implementation "com.github.codeerow.databinding:androidx-core:2.0.0-beta" // androidx-core-ktx for Kotlin
+        implementation "com.github.codeerow.databinding:androidx-recyclerview:2.0.0-beta" // androidx-recyclerview-ktx for Kotlin
 }
 ```
 
