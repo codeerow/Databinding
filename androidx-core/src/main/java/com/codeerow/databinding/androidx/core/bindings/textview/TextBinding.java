@@ -40,7 +40,9 @@ public class TextBinding extends Binding {
 
     @Override
     public void execute() {
+        TextView view = viewRef.get();
         value.observe(lifecycleOwner, new Observer<String>() {
+
             TextView view = viewRef.get();
 
             @Override
@@ -48,24 +50,24 @@ public class TextBinding extends Binding {
                 String previousValue = view.getText().toString();
                 if (previousValue.equals(currentValue)) return;
                 view.setText(currentValue);
-
-                if (twoWay) {
-                    view.addTextChangedListener(new TextWatcher() {
-                        @Override
-                        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                        }
-
-                        @Override
-                        public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        }
-
-                        @Override
-                        public void afterTextChanged(Editable text) {
-                            value.setValue(text == null ? "" : text.toString());
-                        }
-                    });
-                }
             }
         });
+
+        if (twoWay) {
+            view.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                }
+
+                @Override
+                public void afterTextChanged(Editable text) {
+                    value.setValue(text == null ? "" : text.toString());
+                }
+            });
+        }
     }
 }
