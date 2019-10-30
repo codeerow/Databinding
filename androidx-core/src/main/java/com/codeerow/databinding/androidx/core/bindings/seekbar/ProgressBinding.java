@@ -38,6 +38,8 @@ public class ProgressBinding extends Binding {
 
     @Override
     public void execute() {
+        SeekBar view = viewRef.get();
+
         value.observe(this.lifecycleOwner, new Observer<Integer>() {
             SeekBar view = viewRef.get();
 
@@ -46,26 +48,26 @@ public class ProgressBinding extends Binding {
                 Integer previousValue = view.getProgress();
                 if (previousValue.equals(currentValue)) return;
                 else view.setProgress(currentValue);
-
-                if (twoWay) {
-                    view.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-                        @Override
-                        public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                            value.setValue(progress);
-                        }
-
-                        @Override
-                        public void onStartTrackingTouch(SeekBar seekBar) {
-
-                        }
-
-                        @Override
-                        public void onStopTrackingTouch(SeekBar seekBar) {
-
-                        }
-                    });
-                }
             }
         });
+
+        if (twoWay) {
+            view.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                    value.setValue(progress);
+                }
+
+                @Override
+                public void onStartTrackingTouch(SeekBar seekBar) {
+
+                }
+
+                @Override
+                public void onStopTrackingTouch(SeekBar seekBar) {
+
+                }
+            });
+        }
     }
 }
